@@ -1,3 +1,4 @@
+![Workflow status](https://github.com/nicefme/yamdb_final/tree/master/.github/workflows/yamdb_workflow.yml/badge.svg)
 # REST API YaMDb
 ## База отзывов пользователей
 
