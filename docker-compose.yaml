@@ -10,7 +10,8 @@ services:
     ports:
       - "5432"
   web:
-    build: .
+    #build: .
+    image: nicefme/yamdbfinal:latest
     restart: always
     ports:
       - "8000:8000" 
