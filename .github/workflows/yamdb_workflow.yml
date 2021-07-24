@@ -63,7 +63,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           stack_file_name: docker-compose.yaml
           script: |
-            sudo docker pull nicefme/yamdbfinal:latest
+            sudo docker pull nicefme/yamdbfinal:v1.1
             sudo docker-compose stop
             sudo docker-compose rm web
             # Создаст файл для переменных окружения
