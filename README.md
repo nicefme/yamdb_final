@@ -1,5 +1,7 @@
-![Workflow status](https://github.com/nicefme/yamdb_final/tree/master/.github/workflows/yamdb_workflow.yml/badge.svg)
-# REST API YaMDb
+# REST API YaMDb  
+
+![Workflow status](https://github.com/nicefme/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)  
+
 ## База отзывов пользователей
 
 
