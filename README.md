@@ -29,8 +29,13 @@ REST API YaMDb - база отзывов пользователей о филь�
 > HOST - ip-адрес сервера;  
 > USER - имя пользователя для сервера;  
 > SSH_KEY - приватный ключ с компьютера, имеющего доступ к боевому серверу ``` cat ~/.ssh/id_rsa ```;  
-> PASSPHRASE - пароль для сервера;
-> 
+> PASSPHRASE - пароль для сервера;  
+> DB_ENGINE }} >> .env
+            echo DB_NAME=${{ secrets.DB_NAME }} >> .env
+            echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> .env
+            echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
+            echo DB_HOST=${{ secrets.DB_HOST }} >> .env
+            echo DB_PORT=${{ secrets.DB_PORT 
 
 #### Подготовка сервера
 
@@ -71,11 +76,11 @@ REST API YaMDb - база отзывов пользователей о филь�
 ``` sudo docker-compose exec web python manage.py makemigrations users ```  
 ``` sudo docker-compose exec web python manage.py makemigrations reviews ```  
 ``` sudo docker-compose exec web python manage.py makemigrations titles ```  
-``` docker-compose exec web python manage.py migrate --noinput ```
+``` sudo docker-compose exec web python manage.py migrate --noinput ```
 - Собрать статику:  
-``` docker-compose exec web python manage.py collectstatic --no-input ```
-
-Готово! Сайт доступен по адресу http://127.0.0.1/
+``` sudo docker-compose exec web python manage.py collectstatic --no-input ```
+- Заполнить БД:  
+``` sudo docker-compose exec web python manage.py loaddata fixtures.json ```  
 
 
 ### Создание суперпользователя
@@ -85,7 +90,4 @@ REST API YaMDb - база отзывов пользователей о филь�
 и далее следовать инструкциям на экране.
 
 
-### Заполнение базы данных
-
-Для того, чтобы заполнить БД начальными данными по фильмам, книгам, музыкальным произведениям, а также переченем жанров и категорий необходимо выполнить следующую команду:  
-``` docker-compose exec web python manage.py loaddata fixtures.json ```
+> Готово! Сайт настроен и запущен

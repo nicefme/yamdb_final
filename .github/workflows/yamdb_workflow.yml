@@ -48,7 +48,7 @@ jobs:
         uses: docker/build-push-action@v2 # Выполняет push образа в DockerHub 
         with:
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/yamdbfinal:latest
+          tags: nicefme/yamdbfinal:latest
   
   deploy:
     runs-on: ubuntu-latest
