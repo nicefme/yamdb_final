@@ -10,7 +10,7 @@ services:
     ports:
       - "5432"
   web:
-    image: nicefme/yamdbfinal:latest
+    image: ${{ secrets.DOCKER_USERNAME }}/yamdbfinal:latest
     restart: always
     ports:
       - "8000:8000" 
