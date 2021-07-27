@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import TemplateView
 from rest_framework import permissions
 from django.conf.urls import url
 from drf_yasg.views import get_schema_view
@@ -17,11 +16,6 @@ urlpatterns = [
     path('api/', include('titles.urls')),
     path('api/', include('reviews.urls')),
     path('api/', include('users.urls')),
-   # path(
-   #     'redoc/',
-   #     TemplateView.as_view(template_name='redoc.html'),
-   #     name='redoc'
-    ),
 ]
 
 schema_view = get_schema_view(
