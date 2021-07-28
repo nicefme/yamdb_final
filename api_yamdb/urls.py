@@ -1,6 +1,5 @@
 from django.contrib import admin
 from django.urls import path, include
-# from django.views.generic import TemplateView
 from django.conf.urls import url
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -17,21 +16,13 @@ urlpatterns = [
     path('api/', include('titles.urls')),
     path('api/', include('reviews.urls')),
     path('api/', include('users.urls')),
-    # path(
-    # 'redoc/',
-    # TemplateView.as_view(template_name='redoc.html'),
-    # name='redoc'
-    # ),
 ]
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Cats API",
+        title="Yamdb API",
         default_version='v1',
-        description="Документация для приложения",
-        # terms_of_service="URL страницы с пользовательским соглашением",
-        contact=openapi.Contact(email="admin@kittygram.ru"),
-        license=openapi.License(name="BSD License"),
+        description="Документация для приложения yamdb API",
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
